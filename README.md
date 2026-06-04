@@ -71,7 +71,7 @@ To view the database tables and data:
 
 ---
 
-## 🧠 Design Decisions & Assumptions
+## 🧠 Design Decisions
 
 1. **Concurrency Protection**:
    * To prevent race conditions (e.g. multiple users booking the last seat concurrently and causing overbooking), the service locks the Event database row during booking and cancellation using JPA **Pessimistic Write Locking** (`@Lock(LockModeType.PESSIMISTIC_WRITE)`).
